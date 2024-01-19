@@ -30,10 +30,12 @@ public class TestParallelExecution {
         assertEquals(10L, accountRepository.getBalance("Alice-123"));
         assertEquals(0L, accountRepository.getBalance("Bob-456"));
 
-        CountDownLatch startLatch = new CountDownLatch(1);
-        CountDownLatch endLatch = new CountDownLatch(Thread.activeCount());
+        int threadCount = 8;
 
-        for (int i = 0; i < Thread.activeCount(); i++) {
+        CountDownLatch startLatch = new CountDownLatch(1);
+        CountDownLatch endLatch = new CountDownLatch(threadCount);
+
+        for (int i = 0; i < threadCount; i++) {
             new Thread(() -> {
                 try {
                     startLatch.await();
