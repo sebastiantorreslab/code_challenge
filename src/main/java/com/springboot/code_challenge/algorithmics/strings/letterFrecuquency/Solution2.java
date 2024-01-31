@@ -4,17 +4,15 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 public class Solution2 {
     public static void main(String[] args) {
-        String text = "bogota";
-        String value = repeatedLetters(text).get(0);
+        String text = "main";
         System.out.println(repeatedLetters(text));
-        System.out.println(new StringBuilder(text).indexOf(value));
+
     }
 
-    public static List<String> repeatedLetters(String entry) {
+    public static Integer repeatedLetters(String entry) {
         char[] sequence = entry.toCharArray();
 
         Set<String> letters = new HashSet<>();
@@ -28,7 +26,17 @@ public class Solution2 {
                 letters.add(String.valueOf(sequence[i]));
             }
         }
-        return repeated.stream().sorted().collect(Collectors.toList());
+        // I need to verify the letters obtained in 'repeated'.
+        // For each letter in 'repeated', validate to which index it corresponds.
+        // Validate the smallest index.
+        // Return it.
+
+        List<Integer> positions = new ArrayList<>();
+        repeated.forEach(e -> positions.add(entry.indexOf(e)));
+
+        // in this wat the method will return the index related to the first letter that repeats in each string
+
+        return positions.stream().min(Integer::compareTo).orElse(-1);
     }
 }
 
