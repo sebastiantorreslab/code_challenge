@@ -9,15 +9,12 @@ import java.util.Set;
 public class Solution {
 
     public static void main(String[] args) {
-        System.out.println(letterFrequency("solucin"));
-
+        System.out.println(letterFrequency("").stream().skip(0).findFirst().orElse(-1));
     }
-
 
     public static Set<Integer>  letterFrequency(String entry) {
         char[] sequence = entry.toCharArray();
         Set<Integer> repeated = new HashSet<>();
-        repeated.clear();
         for (int j = 0; j < sequence.length; j++) {
             int counter = 0;
             for (int i = 0; i < sequence.length; i++) {
@@ -30,8 +27,6 @@ public class Solution {
                 repeated.add(j);
             }
         }
-        if(repeated.isEmpty())  repeated.add(-1);
-
         return repeated;
     }
 }
