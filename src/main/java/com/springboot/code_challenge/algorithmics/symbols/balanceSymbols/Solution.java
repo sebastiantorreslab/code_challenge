@@ -1,6 +1,5 @@
-package com.springboot.code_challenge.algorithmics.numbers.fibonacci;
+package com.springboot.code_challenge.algorithmics.symbols.balanceSymbols;
 
-import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.Stack;
 

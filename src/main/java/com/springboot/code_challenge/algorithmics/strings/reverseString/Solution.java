@@ -7,11 +7,13 @@ public class Solution {
 
     }
 
-    public static StringBuilder reverseString(String text){
+    public static StringBuilder reverseString(String text) {
         StringBuilder reversed = new StringBuilder(text.length());
-        for(int i = text.length()-1;i>=0;i--){
+        for (int i = text.length() - 1; i >= 0; i--) {
             reversed.append(text.charAt(i));
         }
         return reversed;
     }
 }
+
+
