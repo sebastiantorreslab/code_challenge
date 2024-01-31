@@ -11,9 +11,8 @@ public class Solution {
 Given a read-only array of n + 1 integers between 1 and n, find one number that repeats in linear time using less than O(n) space and traversing the stream sequentially O(1) times.
 If there are multiple possible answers ( like in the sample case ), output any one, if there is no duplicate, output -1
 */
-
     public static void main(String[] args) {
-        Integer[] n = {1,2,3,2,2,2,1,1,1,1,3,3};
+        Integer[] n = {1,2,3,1,1,1,1,3,3,4};
         List<Integer> nums = new ArrayList<>(List.of(n));
         System.out.println(repeatedNumber(nums));
     }

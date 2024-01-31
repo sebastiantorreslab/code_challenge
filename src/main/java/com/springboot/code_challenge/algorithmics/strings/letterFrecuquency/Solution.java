@@ -9,7 +9,7 @@ import java.util.Set;
 public class Solution {
 
     public static void main(String[] args) {
-        System.out.println(letterFrequency("").stream().skip(0).findFirst().orElse(-1));
+        System.out.println(letterFrequency("solution").stream().skip(0).findFirst().orElse(-1));
     }
 
     public static Set<Integer>  letterFrequency(String entry) {
