@@ -19,9 +19,9 @@ public class Solution {
         boolean constraint = !elements.isEmpty();
         Integer minor = elements.get(0);
         if (constraint) {
-            for (int i = 0; i < elements.size(); i++) {
-                if (elements.get(i) < minor && elements.get(i) >=0) {
-                    minor = elements.get(i);
+            for (Integer element : elements) {
+                if (element < minor && element >= 0) {
+                    minor = element;
                 }
             }
         } else {
