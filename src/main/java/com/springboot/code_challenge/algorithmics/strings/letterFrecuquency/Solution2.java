@@ -18,7 +18,6 @@ public class Solution2 {
         Set<String> letters = new HashSet<>();
         List<String> repeated = new ArrayList<>();
 
-
         for (int i = 0; i < sequence.length; i++) {
             if (letters.contains(String.valueOf(sequence[i]))) {
                 repeated.add(String.valueOf(sequence[i]));
@@ -26,6 +25,7 @@ public class Solution2 {
                 letters.add(String.valueOf(sequence[i]));
             }
         }
+
         // I need to verify the letters obtained in 'repeated'.
         // For each letter in 'repeated', validate to which index it corresponds.
         // Validate the smallest index.
