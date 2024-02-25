@@ -7,23 +7,29 @@ public class Solution {
 
     public static void main(String[] args) {
 
+
+        fibSerie(15);
+
+
     }
 
     public static void fibSerie(Integer target) {
-        Integer num;
-        Integer num1;
-        Integer fib;
+        Integer a;
+        Integer b;
+
         List<Integer> fibNums = new ArrayList<>();
+
         for (int i = 0; i < target; i++) {
             if (i <= 1) {
-                num = i;
-                fibNums.add(num);
-            } else  {
-                num = i - 1;
-                num1 = i;
-                fib = num + num1;
-                fibNums.add(fib);
+                fibNums.add(i);
+            } else {
+                a = fibNums.get(i - 2);
+                b = fibNums.get(i - 1);
+                Integer c = a+b;
+                fibNums.add(c);
             }
         }
+        System.out.println(fibNums);
+
     }
 }
