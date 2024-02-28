@@ -8,11 +8,11 @@ public class Solution {
 
     public static void main(String[] args) {
 
-        System.out.println(Arrays.toString(removeOddNumbers(numbers)));
+        System.out.println(Arrays.toString(removeEvenNumbers(numbers)));
 
     }
 
-    public static int[] removeOddNumbers(int[] nums) {
+    public static int[] removeEvenNumbers(int[] nums) {
         int numberCount = 0;
         for (int num : nums) {
             if (num % 2 != 0) {
@@ -24,14 +24,12 @@ public class Solution {
         int[] oddNumbers = new int[numberCount];
         int counter = 0;
 
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] % 2 != 0) {
-                oddNumbers[counter++] = nums[i];
+        for (int num : nums) {
+            if (num % 2 != 0) {
+                oddNumbers[counter++] = num;
             }
+
         }
-
-
-
         return oddNumbers;
     }
 }
