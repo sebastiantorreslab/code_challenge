@@ -6,11 +6,7 @@ import java.util.List;
 public class Solution {
 
     public static void main(String[] args) {
-
-
         fibSerie(15);
-
-
     }
 
     public static void fibSerie(Integer target) {
