@@ -4,12 +4,12 @@ public class Solution {
 
     public static void main(String[] args) {
 
-        System.out.println(isPalyndrome("oso"));
+        System.out.println(isPalindrome("oso"));
 
     }
 
 
-    public static boolean isPalyndrome(String text){
+    public static boolean isPalindrome(String text){
 
         char[] sequence = text.toCharArray();
         int n = sequence.length - 1;
