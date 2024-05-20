@@ -7,9 +7,7 @@ public class Solution {
     }
 
 
-    public static int finMissingNumber(){
 
-    }
 
 
 
