@@ -17,7 +17,7 @@ public class Solution {
 
     public static void main(String[] args) {
 
-        System.out.println(getSmallestNumberByFrequency(1, 2, 2, 4, 6, 4,4));
+        System.out.println(getSmallestNumberByFrequency(1, 2, 4, 6, 4,4,4,2,2,2,4));
 
     }
 
@@ -26,15 +26,18 @@ public class Solution {
 
         Map<Integer, Integer> frequencies = getIntegerMap(nums);
 
-        Integer condition1 = frequencies.values().stream().max(Comparator.naturalOrder()).orElse(null);
-        Integer condition2 = frequencies.keySet().stream().min(Comparator.naturalOrder()).orElse(null);
+        Integer maxKeyFrequency = frequencies.entrySet().stream().max(Map.Entry.comparingByValue()).get().getKey();
+        Integer minKeyEqualFrequency = frequencies.entrySet().stream().min(Map.Entry.comparingByKey()).get().getKey();
 
-        for(Map.Entry<Integer,Integer> entry : frequencies.entrySet()){
-
-            if(entry.getValue().equals(condition1)){
+        for(Map.Entry<Integer, Integer> entry: frequencies.entrySet()){
+            if(frequencies.containsKey(maxKeyFrequency)){
                 return entry.getKey();
+            }else if(frequencies.containsKey(minKeyEqualFrequency)){
+                return minKeyEqualFrequency;
             }
         }
+
+
         return 0;
 
     }
